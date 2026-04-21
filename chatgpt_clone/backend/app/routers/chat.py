@@ -76,6 +76,7 @@ async def stream_chat_response(
             if await request.is_disconnected():
                 client_disconnected = True
                 stop_flag[0] = True
+                print(f"[DEBUG] Client disconnected detected, content length: {len(full_content)}")
                 break
             
             # 非阻塞地从队列获取事件
@@ -102,21 +103,25 @@ async def stream_chat_response(
                     db, ai_message.id, full_content, full_reasoning
                 )
                 update_counter = 0
+    except Exception as e:
+        print(f"[DEBUG] Exception in stream: {e}")
+        client_disconnected = True
     finally:
         stop_flag[0] = True
         thread.join(timeout=1)
-    
-    # 最终更新确保所有内容都保存
-    if client_disconnected:
-        stopped_content = full_content + "\n\n[已停止生成]" if full_content else "[已停止生成]"
-        stopped_reasoning = full_reasoning + "\n\n[思考已中断]" if full_reasoning else ""
-        chat_service.update_message_content(
-            db, ai_message.id, stopped_content, stopped_reasoning
-        )
-    else:
-        chat_service.update_message_content(
-            db, ai_message.id, full_content, full_reasoning
-        )
+        
+        # 最终更新确保所有内容都保存（移到 finally 中确保一定执行）
+        if client_disconnected:
+            print(f"[DEBUG] Saving with stop marker, content: {len(full_content)}, reasoning: {len(full_reasoning)}")
+            stopped_content = full_content + "\n\n[已停止生成]" if full_content else "[已停止生成]"
+            stopped_reasoning = full_reasoning + "\n\n[思考已中断]" if full_reasoning else ""
+            chat_service.update_message_content(
+                db, ai_message.id, stopped_content, stopped_reasoning
+            )
+        else:
+            chat_service.update_message_content(
+                db, ai_message.id, full_content, full_reasoning
+            )
 
 
 @router.post("/chat/stream")

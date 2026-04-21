@@ -4,6 +4,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 import { ChatWindow } from '@/components/chat/ChatWindow';
+import { ParticleBackground } from '@/components/common/ParticleBackground';
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(() => {
@@ -76,27 +77,33 @@ export function Layout() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-white dark:bg-gray-900">
-      <Header
-        mode={mode}
-        onModeChange={setMode}
-        onToggleSidebar={handleToggleSidebar}
-        onGoHome={handleGoHome}
-        hasMessages={hasMessages}
-        theme={theme}
-        onThemeChange={setTheme}
-      />
-      <div className="flex-1 flex overflow-hidden">
-        <Sidebar
-          isOpen={sidebarOpen}
-          conversations={conversations}
-          currentConversationId={currentConversationId}
-          onSelectConversation={handleSelectConversation}
-          onNewConversation={handleNewConversation}
-          onDeleteConversation={handleDeleteConversation}
-          onClose={handleCloseSidebar}
+    <div className="h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-950 dark:via-slate-900 dark:to-indigo-950 overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground />
+      
+      {/* Glassmorphism Container */}
+      <div className="relative z-10 h-full flex flex-col">
+        <Header
+          mode={mode}
+          onModeChange={setMode}
+          onToggleSidebar={handleToggleSidebar}
+          onGoHome={handleGoHome}
+          hasMessages={hasMessages}
+          theme={theme}
+          onThemeChange={setTheme}
         />
-        <ChatWindow />
+        <div className="flex-1 flex overflow-hidden">
+          <Sidebar
+            isOpen={sidebarOpen}
+            conversations={conversations}
+            currentConversationId={currentConversationId}
+            onSelectConversation={handleSelectConversation}
+            onNewConversation={handleNewConversation}
+            onDeleteConversation={handleDeleteConversation}
+            onClose={handleCloseSidebar}
+          />
+          <ChatWindow />
+        </div>
       </div>
     </div>
   );
