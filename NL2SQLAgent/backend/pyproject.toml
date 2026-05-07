@@ -1,0 +1,10 @@
+[project]
+name = "nl2sql-backend"
+version = "0.1.0"
+description = "FastAPI backend for NL2SQL demo"
+requires-python = ">=3.11,<3.13"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

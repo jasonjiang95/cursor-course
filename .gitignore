@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Node
+NL2SQLAgent/frontend/node_modules/
+NL2SQLAgent/frontend/dist/
+
+# Env & local
+.env
+NL2SQLAgent/backend/.env
+NL2SQLAgent/frontend/.env
+NL2SQLAgent/frontend/.env.local
+NL2SQLAgent/frontend/.env.*.local
+
+# Local SQLite（首次运行或由脚本生成即可）
+NL2SQLAgent/backend/data/*.db
+
+# Cursor IDE（个人/本地配置）
+.cursor/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
