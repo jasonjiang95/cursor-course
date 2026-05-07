@@ -1,13 +1,24 @@
-# nl2sql_data_analysis
+# cursor-course
 
-智能数据分析系统（FastAPI + LangChain + SQLite + React）— 详见 `.cursor/plans/智能数据分析系统模块规划_e9257a18.plan.md`。
+本仓库包含两个独立子项目：
 
-## 仓库结构
+| 目录 | 说明 |
+|------|------|
+| **`chatgpt_clone/`** | 原 Cursor 课程示例：类 ChatGPT 对话前端与后端（参见该目录内 README）。 |
+| **`NL2SQLAgent/`** | **nl2sql 智能数据分析**：FastAPI + LangChain + SQLite + React（详见 `NL2SQLAgent/README.md`）。 |
+
+---
+
+## NL2SQLAgent（nl2sql 数据分析）
+
+智能数据分析系统（FastAPI + LangChain + SQLite + React）。
+
+### 仓库结构（nl2sql）
 
 | 路径 | 说明 |
 |------|------|
-| **`NL2SQLAgent/backend/`** | FastAPI 应用，`GET /health`，Phase 3 起 `/api/v1` |
-| **`NL2SQLAgent/frontend/`** | Vite + React + TypeScript（Phase 4 对接 API） |
+| **`NL2SQLAgent/backend/`** | FastAPI 应用，`GET /health`，`/api/v1` |
+| **`NL2SQLAgent/frontend/`** | Vite + React + TypeScript |
 
 **端口：** 后端 `8000`，前端开发 `5173`。后端 CORS 默认允许 `http://localhost:5173` 与 `http://127.0.0.1:5173`。
 
@@ -48,9 +59,8 @@ npm run dev
 
 ## Phase 3 开发文档（后端）
 
-- **[NL2SQLAgent/docs/phase3-development.md](NL2SQLAgent/docs/phase3-development.md)**：环境、模块映射、实现顺序、ChatTongyi/工具约定、验收与脚本对账入口。**当前状态**：Phase 3 **已完成**。  
-- 字段与 API 的 **SSOT** 仍以 [`.cursor/plans/智能数据分析系统模块规划_e9257a18.plan.md`](.cursor/plans/智能数据分析系统模块规划_e9257a18.plan.md) 中「技术契约与固定约定」为准。**下一步**：Phase 4 前端接 API（计划中 `p4-*` todo）。
+- **[NL2SQLAgent/docs/phase3-development.md](NL2SQLAgent/docs/phase3-development.md)**：环境、模块映射、实现顺序、ChatTongyi/工具约定、验收与脚本对账入口。**当前状态**：Phase 3 **已完成**。
 
-## 远端仓库（规则配置）
+## 远端 Git 与协作
 
-参见 `.cursor/rules/linear-dev-workflow.mdc` 中的 `project.repo`。
+若使用 Linear 等工作流，可在本地 `.cursor/rules/linear-dev-workflow.mdc` 中配置 `project.repo`（该文件默认不提交，按需自建）。

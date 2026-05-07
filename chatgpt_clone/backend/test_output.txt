@@ -1,0 +1,237 @@
+﻿.\venv\Scripts\python.exe : D:\GOCWork\cursor-course\chatgpt_clone\backend\test_deepseek_api.py:66: PydanticDeprecatedS
+ince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribut
+e from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+所在位置 C:\Users\PC\AppData\Local\Temp\ps-script-43cf7501-5014-4e9a-b4bb-558d61820bd8.ps1:82 字符: 1
++ .\venv\Scripts\python.exe test_deepseek_api.py 2>&1 | Out-File -Encod ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (D:\GOCWork\curs...emoved in V3.0.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+============================================================
+ DeepSeek API 鎺ュ彛娴嬭瘯
+============================================================
+
+>>> 寮€濮嬫祴璇?...
+
+============================================================
+ 娴嬭瘯1: 瀵硅瘽妯″紡 - 娴佸紡杈撳嚭
+============================================================
+
+璇锋眰鍙傛暟:
+  model: deepseek-chat
+  messages: [{'role': 'user', 'content': '浣犲ソ锛岃绠€鍗曚粙缁嶄竴涓嬩綘鑷繁'}]
+  stream: True
+
+娴佸紡鍝嶅簲 chunks:
+
+[绗?涓猚hunk璇︾粏缁撴瀯]:
+  chunk.id: f3ededfd-ef90-4aa6-875e-9f3a611f1aa0
+  chunk.model: deepseek-chat
+  chunk.object: chat.completion.chunk
+  chunk.created: 1776683792
+  chunk.choices[0].index: 0
+  chunk.choices[0].delta: ChoiceDelta(content='', function_call=None, refusal=None, role='assistant', tool_calls=None)
+  chunk.choices[0].finish_reason: None
+  delta.model_fields: dict_keys(['content', 'function_call', 'refusal', 'role', 'tool_calls'])
+
+  print(f"  delta.model_fields: {delta.model_fields.keys() if hasattr(delta, 'model_fields') else 'N/A'}")
+浣犲ソ锛佹垜鏄疍eepSeek锛岀敱娣卞害姹傜储鍏徃鍒涢€犵殑AI鍔╂墜锛屽緢楂樺叴璁よ瘑浣狅紒馃槉
+
+璁╂垜绠€鍗曚粙缁嶄竴涓嬭嚜宸憋細
+
+馃 **鍩烘湰淇℃伅**
+- 鎴戞槸涓€涓函鏂囨湰AI妯″瀷锛屾搮闀跨悊瑙ｅ拰鐢熸垚鑷劧璇█
+- 鐭ヨ瘑鎴鍒?024骞?鏈堬紝鎷ユ湁128K鐨勪笂涓嬫枃澶勭悊鑳藉姏
+
+馃挕 **鎴戣兘鍋氫粈涔?*
+- 鍥炵瓟鍚勭闂锛岃繘琛屾繁搴﹀璇?
+- 鍗忓姪鍐欎綔銆佺炕璇戙€佺紪绋嬨€佸垎鏋愮瓑浠诲姟
+- 澶勭悊浣犱笂浼犵殑鏂囦欢锛堝浘鍍忋€丳DF銆乄ord銆丒xcel銆丳PT绛夛級锛屼粠涓鍙栨枃瀛椾俊鎭?
+- 鏀寔鑱旂綉鎼滅储锛堥渶瑕佷綘鎵嬪姩寮€鍚級
+
+馃啌 **瀹屽叏鍏嶈垂**
+- 鐩墠瀹屽叏鍏嶈垂浣跨敤锛屾病鏈夋敹璐硅鍒?
+- 鍙互閫氳繃瀹樻柟搴旂敤鍟嗗簵涓嬭浇App浣跨敤
+
+馃攳 **鐗圭偣**
+- 鍥炲椋庢牸姣旇緝鐑儏缁嗚吇
+- 浼氳鐪熷寰呮瘡涓棶棰橈紝灏藉姏鎻愪緵鏈夊府鍔╃殑鍥炵瓟
+- 铏界劧涓嶆敮鎸佸妯℃€佽瘑鍒拰璇煶鍔熻兘锛屼絾鍦ㄦ枃鏈鐞嗘柟闈㈠緢鎿呴暱
+
+鎴戠殑鐩爣灏辨槸鎴愪负浣犺创蹇冪殑鏅鸿兘鍔╂墜锛屾棤璁轰綘鏈変粈涔堥棶棰樻垨闇€瑕佷粈涔堝府鍔╋紝閮藉彲浠ュ敖绠￠棶鎴戯紒鏈変粈涔堢壒鍒兂浜嗚В鐨勫悧锛熲湪
+
+
+[鏈€鍚庝竴涓猚hunk]:
+  finish_reason: stop
+
+[缁熻]:
+  鎬籧hunk鏁? 226
+  鍐呭闀垮害: 409
+
+>>> 寮€濮嬫祴璇?...
+
+============================================================
+ 娴嬭瘯2: 鎬濊€冩ā寮?- 娴佸紡杈撳嚭 (浣跨敤 thinking 鍙傛暟)
+============================================================
+
+璇锋眰鍙傛暟:
+  model: deepseek-chat
+  messages: [{'role': 'user', 'content': '9.11 鍜?9.8 鍝釜鏇村ぇ锛?}]
+  stream: True
+  extra_body: {"thinking": {"type": "enabled"}}
+
+娴佸紡鍝嶅簲:
+
+[绗?涓猚hunk璇︾粏缁撴瀯]:
+  chunk.id: 714dad0c-264d-4186-9402-7fc3e417d7b9
+  chunk.model: deepseek-reasoner
+  chunk.choices[0].delta: ChoiceDelta(content=None, function_call=None, refusal=None, role='assistant', tool_calls=None, reasoning_content='')
+  delta.model_dump(): {'content': None, 'function_call': None, 'refusal': None, 'role': 'assistant', 'tool_calls': None, 'reasoning_content': ''}
+  hasattr reasoning_content: True
+
+
+[鎬濊€冭繃绋嬪紑濮媇
+鎴戜滑琚棶鍒帮細"9.11 鍜?9.8 鍝釜鏇村ぇ锛? 杩欑湅璧锋潵寰堢畝鍗曪紝浣嗗彲鑳芥槸涓€涓櫡闃便€傚湪涓枃涓紝"9.11" 鍙兘琚В閲婁负鏃ユ湡锛?鏈?1鏃ワ級锛岃€?"9.8" 鍙兘琚В閲婁负9鏈?鏃ワ紝鎵€浠ラ棶鐨勬槸鏃ユ湡鐨勮瘽锛?鏈?1鏃ュ湪9鏈?鏃ヤ箣鍚庯紝鎵€浠ユ洿澶с€備絾鏄紝濡傛灉浣滀负鏁板瓧姣旇緝锛?.11 鍜?9.8 浣滀负灏忔暟锛?.11 = 9.11锛?.8 = 9.80锛屾墍浠?9.8 瀹為檯涓婃洿澶э紝鍥犱负 9.80 > 9.11銆傜劧鑰岋紝鍦ㄤ腑鏂囪澧冧腑锛屾湁鏃剁敤鐐硅〃绀虹増鏈彿鎴栨棩鏈燂紝闇€瑕佹牴鎹笂涓嬫枃鍒ゆ柇銆傞棶棰樻槸鐢ㄤ腑鏂囧啓鐨勶細"9.11 鍜?9.8 鍝釜鏇村ぇ锛? 娌℃湁棰濆涓婁笅鏂囥€傚彲鑳芥槸涓€涓剳绛嬫€ヨ浆寮紝鍥犱负閫氬父浜轰滑鍙兘浼氱洿瑙傚湴璁や负9.11姣?.8澶э紝浣嗕綔涓哄皬鏁帮紝9.8鏇村ぇ銆傛垨鑰咃紝鍙兘鎸囩殑鏄棩鏈燂紝閭ｄ箞9.11鏇村ぇ銆?
+
+璁╂垜浠垎鏋愶細濡傛灉浣滀负鏁板瓧锛?.11鍜?.8姣旇緝澶у皬锛屾垜浠簲璇ュ皢瀹冧滑瑙嗕负灏忔暟銆?.11 = 9 + 0.11锛?.8 = 9 + 0.80锛屾樉鐒?.80 > 0.11锛屾墍浠?.8 > 9.11銆傛墍浠?.8鏇村ぇ銆?
+
+浣嗘槸锛屽湪涓浗锛屾暟瀛楃殑灏忔暟鐐归€氬父鐢ㄧ偣琛ㄧず锛屾墍浠?.11灏辨槸涔濈偣涓€涓€锛?.8灏辨槸涔濈偣鍏€傚湪鏁板涓婏紝姣旇緝灏忔暟鏃讹紝鍏堟瘮杈冩暣鏁伴儴鍒嗭紝鏁存暟閮ㄥ垎鐩稿悓锛屽啀姣旇緝鍗佸垎浣嶏細9.8鐨勫崄鍒嗕綅鏄?锛?.11鐨勫崄鍒嗕綅鏄?锛屾墍浠?.8 > 9.11銆傛墍浠ョ瓟妗堝簲璇ユ槸9.8鏇村ぇ銆?
+
+鐒惰€岋紝鏈変簺浜哄彲鑳戒細琚?9.11"杩欎釜鏁板瓧杩锋儜锛屽洜涓虹編鍥?路11浜嬩欢寰堣憲鍚嶏紝鎵€浠ュ彲鑳借仈鎯冲埌鏃ユ湡銆備絾鏃ユ湡姣旇緝锛?鏈?1鏃ユ瘮9鏈?鏃ユ櫄锛屾墍浠?.11鏇村ぇ銆備絾闂涓啓鐨勬槸"9.11"鍜?9.8"锛岃€屼笉鏄?9/11"鍜?9/8"銆傞€氬父鏃ユ湡鍐欐硶鏄?/11鎴?.11锛熷湪涓浗锛屾棩鏈熷父鐢ㄧ偣鍒嗛殧锛屼緥濡?鏈?1鏃ュ啓鎴?.11銆傛墍浠ュ彲鑳芥槸鎸囨棩鏈熴€?
+
+鑰冭檻鍒伴棶棰樻槸鐢ㄤ腑鏂囨彁鍑虹殑锛屽彲鑳芥潵鑷竴涓皬瀛︾敓鎴栬叮鍛虫暟瀛﹂棶棰橈紝鏈夋椂浼氳€冨療灏忔暟鐨勬瘮杈冿紝闇€瑕佷粩缁嗐€傛垜鍥炲繂璧风被浼肩殑闂锛氶棶"4.5鍜?.50鍝釜澶э紵"绛夌瓑銆備絾杩欓噷鏄?.11鍜?.8銆備篃鍙兘鏄竴涓櫡闃憋紝鍥犱负鐪嬭捣鏉?.11鐨勬暟瀛楁洿澶氾紝鎵€浠ュ彲鑳借璇涓烘洿澶с€?
+
+娌℃湁鏇村涓婁笅鏂囷紝鎴戣涓烘渶鍚堢悊鐨勮В閲婃槸浣滀负鏁板瓧姣旇緝銆傛墍浠ョ瓟妗堬細9.8鏇村ぇ銆?
+
+浣嗚鎴戜滑妫€鏌ラ棶棰橈細"9.11 鍜?9.8 鍝釜鏇村ぇ锛? 鍦ㄤ腑鏂囦腑锛屾湁鏃朵篃鎶婄増鏈彿鍐欐垚9.11鍜?.8锛屾瘮杈冪増鏈彿鏃讹紝9.11鍙兘姣?.8鏂帮紝浣嗙増鏈瘮杈冮€氬父閫愪釜姣旇緝鏁板瓧锛?.11鐨勪富鐗堟湰鏄?锛屾鐗堟湰鏄?1锛岃€?.8鐨勬鐗堟湰鏄?锛屾墍浠?.11 > 9.8銆備絾鐗堟湰鍙烽€氬父涓嶆槸鐢?鏇村ぇ"鏉ユ弿杩帮紝鑰屾槸"鏇存柊"銆傞棶棰樼敤"鏇村ぇ"锛屽彲鑳芥寚鐨勬槸鏁板€煎ぇ灏忋€?
+
+缁煎悎鑰冭檻锛屾垜鍊惧悜浜庢暟鍊兼瘮杈冿紝鍥犱负濡傛灉鏄棩鏈熸垨鐗堟湰锛屽彲鑳芥槑纭鏃ユ湡鎴栫増鏈€備綔涓虹函鏁板瓧锛?.8 > 9.11銆傛墍浠ュ洖绛旓細9.8鏇村ぇ銆?
+
+浣嗕负浜嗗叏闈紝鎴戝彲浠ョ粰鍑轰袱绉嶈В閲婏紝鐒跺悗璇存槑甯歌闄烽槺銆?
+
+鐢变簬杩欐槸涓€涓暟瀛﹂棶棰橈紝鎴戝皢缁欏嚭鏁板绛旀銆?
+
+鏈€缁堢瓟妗堬細9.8鏇村ぇ銆?
+
+[姝ｅ紡鍥炲寮€濮媇
+浠庢暟鍊煎ぇ灏忔瘮杈冩潵鐪嬶細  
+9.11 = 9 + 0.11锛?.8 = 9 + 0.80銆? 
+鏁存暟閮ㄥ垎鐩稿悓锛屾瘮杈冨皬鏁伴儴鍒嗭細0.8 > 0.11锛屽洜姝?9.8 > 9.11銆? 
+鎵€浠ワ紝**9.8 鏇村ぇ**銆? 
+
+娉ㄦ剰锛氬鏋滈棶棰樻寚鐨勬槸鏃ユ湡锛?鏈?1鏃?vs 9鏈?鏃ワ級锛岄偅涔?9.11 鏇存櫄锛屾鏃?9.11 鏇村ぇ銆備絾鏍规嵁甯歌鐨勬暟瀛︽瘮杈冭鍒欙紝榛樿浣滀负灏忔暟澶勭悊锛屽洜姝ょ瓟妗堜负 9.8銆?
+
+
+[缁熻]:
+  鎬籧hunk鏁? 914
+  鎬濊€冨唴瀹归暱搴? 1186
+  鍥炲鍐呭闀垮害: 189
+
+>>> 寮€濮嬫祴璇?...
+
+============================================================
+ 娴嬭瘯3: 鎺ㄧ悊妯″紡 - 浣跨敤 deepseek-reasoner 妯″瀷
+============================================================
+
+璇锋眰鍙傛暟:
+  model: deepseek-reasoner
+  messages: [{'role': 'user', 'content': 'strawberry 杩欎釜鍗曡瘝閲屾湁澶氬皯涓瓧姣?r锛?}]
+  stream: True
+
+娴佸紡鍝嶅簲:
+
+[绗?涓猚hunk璇︾粏缁撴瀯]:
+  chunk.id: 39fd8db5-d1b9-4dce-aa4c-4417b125dfc1
+  chunk.model: deepseek-reasoner
+  delta.model_dump(): {'content': None, 'function_call': None, 'refusal': None, 'role': 'assistant', 'tool_calls': None, 'reasoning_content': ''}
+
+
+[鎬濊€冭繃绋嬪紑濮媇
+鎴戜滑琚棶鍒帮細"strawberry 杩欎釜鍗曡瘝閲屾湁澶氬皯涓瓧姣?r锛? 鎴戜滑闇€瑕佹暟涓€鏁板崟璇?"strawberry" 涓瓧姣?'r' 鐨勬暟閲忋€?
+
+棣栧厛锛屽啓鍑哄崟璇嶏細s-t-r-a-w-b-e-r-r-y銆傛垜浠€愬瓧姣嶆鏌ワ細s, t, r, a, w, b, e, r, r, y銆傚彲浠ョ湅鍒帮紝浣嶇疆3鏄?'r'锛屼綅缃?鏄?'r'锛屼綅缃?鏄?'r'銆傛墍浠ユ湁涓変釜 'r' 鍚楋紵绛変竴涓嬶細浠旂粏鏁帮細s (1), t (2), r (3), a (4), w (5), b (6), e (7), r (8), r (9), y (10)銆傛墍浠ョ‘瀹炴湁涓変釜 'r'銆備絾鏄紝甯歌鎷煎啓鏄?"strawberry"锛岄€氬父浜轰滑鍙兘璁や负鏈変袱涓?'r'锛熷疄闄呬笂锛岃澶氳嫳璇崟璇?"strawberry" 鍖呭惈涓や釜 'r'锛氫竴涓湪 "straw" 涔嬪悗锛屼竴涓湪 "berry" 涓紵浣嗚鎴戜滑纭锛氬崟璇嶆槸 "strawberry"锛屽畠鐢?"straw" 鍜?"berry" 缁勬垚銆?straw" 浠?'w' 缁撳熬锛屾病鏈?'r'锛?berry" 鏈変袱涓?'r'锛熷疄闄呬笂 "berry" 鎷煎啓涓?b-e-r-r-y锛屾墍浠ユ湁涓や釜 'r'銆傝€?"straw" 鎷煎啓涓?s-t-r-a-w锛屾湁涓€涓?'r'銆傜粍鍚堟椂锛屾湁涓や釜 'r' 鏉ヨ嚜 "berry"锛屼竴涓潵鑷?"straw"锛熶絾娉ㄦ剰缁勫悎鍚庯細"straw" + "berry" = "strawberry"锛屼腑闂存病鏈夌渷鐣ュ瓧姣嶏紵閫氬父 "strawberry" 鎷煎啓涓?s-t-r-a-w-b-e-r-r-y銆傛墍浠ョ‘瀹炴湁涓変釜 'r'锛氫竴涓潵鑷?"straw" 涓殑 'r'锛堝湪 't' 涔嬪悗锛夛紝涓や釜鏉ヨ嚜 "berry" 涓殑鍙?'r'銆傛墍浠ユ€诲叡鏈変笁涓?'r'銆?
+
+鏈夋椂浜轰滑鍙兘浼氶敊璇湴璁や负鍙湁涓や釜锛屼絾瀹為檯鎷煎啓鏄笁涓€傛墍浠ョ瓟妗堝簲璇ユ槸 3銆?
+
+鍥犳锛屽洖绛旓細鍗曡瘝 "strawberry" 涓湁 3 涓瓧姣?'r'銆?
+
+[姝ｅ紡鍥炲寮€濮媇
+鍗曡瘝 "strawberry" 涓寘鍚?3 涓瓧姣?"r"銆傚叿浣撲綅缃负锛氱 3 涓瓧姣嶏紙r锛夈€佺 8 涓瓧姣嶏紙r锛夊拰绗?9 涓瓧姣嶏紙r锛夈€?
+
+
+[缁熻]:
+  鎬籧hunk鏁? 506
+  鎬濊€冨唴瀹归暱搴? 801
+  鍥炲鍐呭闀垮害: 69
+
+>>> 寮€濮嬫祴璇?...
+
+============================================================
+ 娴嬭瘯4: 闈炴祦寮忚緭鍑?- 瀹屾暣鍝嶅簲缁撴瀯
+============================================================
+
+璇锋眰鍙傛暟:
+  model: deepseek-chat
+  messages: [{'role': 'user', 'content': '1+1绛変簬澶氬皯锛?}]
+  stream: False
+
+[瀹屾暣鍝嶅簲缁撴瀯]:
+  response.id: d1f9fcc0-4a79-48eb-a6d0-a7b0dddf9303
+  response.model: deepseek-chat
+  response.object: chat.completion
+  response.created: 1776683864
+  response.choices[0].index: 0
+  response.choices[0].message.role: assistant
+  response.choices[0].message.content: 1 + 1 = 2銆? 
+杩欐槸涓€涓熀纭€鐨勭畻鏈姞娉曡繍绠楃粨鏋溿€?
+  response.choices[0].finish_reason: stop
+  response.usage: CompletionUsage(completion_tokens=16, prompt_tokens=10, total_tokens=26, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cached_tokens=0), prompt_cache_hit_tokens=0, prompt_cache_miss_tokens=10)
+
+>>> 寮€濮嬫祴璇?...
+
+============================================================
+ 娴嬭瘯5: 鎬濊€冩ā寮?- 闈炴祦寮忚緭鍑?
+============================================================
+
+璇锋眰鍙傛暟:
+  model: deepseek-chat
+  messages: [{'role': 'user', 'content': '2+3绛変簬澶氬皯锛熻浠旂粏鎬濊€?}]
+  stream: False
+  extra_body: {"thinking": {"type": "enabled"}}
+
+[瀹屾暣鍝嶅簲缁撴瀯]:
+  response.id: 6e886281-9b27-4c73-9261-369dec5b1099
+  response.model: deepseek-reasoner
+  message.role: assistant
+  message.content: 2 + 3 鐨勮绠楄繃绋嬪涓嬶細
+
+- 鍔犳硶鏄皢涓や釜鏁板€煎悎骞舵眰鎬诲拰銆?
+- 浠庢暟瀛?2 寮€濮嬶紝鍔犱笂 3锛岀浉褰撲簬鍦?2 鐨勫熀纭€涓婂鍔?3 涓崟浣嶃€?
+- 閫愭璁＄畻锛? 鍔?1 绛変簬 3锛屽啀鍔?1 绛変簬 4锛屽啀鍔?1 绛変簬 5銆?
+- 鍥犳锛? + 3 = 5銆?
+
+绛旀鏄?**5**銆?
+  message.reasoning_content: 鎴戜滑琚棶鍒帮細"2+3绛変簬澶氬皯锛熻浠旂粏鎬濊€?銆傝繖鏄竴涓畝鍗曠殑闂銆傜瓟妗堟槸5銆備絾鐢ㄦ埛璇?璇蜂粩缁嗘€濊€?锛屽彲鑳芥剰鍛崇潃浠栦滑鎯宠鎴戜滑灞曠ず鎺ㄧ悊杩囩▼锛屾垨鑰呭彲鑳芥湁涓€涓櫡闃憋紵涓嶏紝2+3鏄剧劧鏄?銆傚彲鑳芥槸娴嬭瘯鎴戜滑鏄惁浠旂粏閬靛惊鎸囦护銆傛垜浼氱粰鍑轰竴涓竻鏅扮殑閫愭鎺ㄧ悊锛岀劧鍚庣粰鍑虹瓟妗堛€?
+
+鎬濊€冩楠わ細
+1. 鎴戜滑鏈変袱涓暟瀛楋細2鍜?銆?
+2. 鎴戜滑闇€瑕佸皢瀹冧滑鐩稿姞銆?
+3. 鍔犳硶鏄皢涓や釜鏁伴噺缁勫悎鍦ㄤ竴璧峰緱鍒版€绘暟鐨勮繍绠椼€?
+4. 濡傛灉鎴戜滑浠?寮€濮嬶紝鐒?..
+  message.model_dump() keys: dict_keys(['content', 'refusal', 'role', 'annotations', 'audio', 'function_call', 'tool_calls', 'reasoning_content'])
+    content: 2 + 3 鐨勮绠楄繃绋嬪涓嬶細
+
+- 鍔犳硶鏄皢涓や釜鏁板€煎悎骞舵眰鎬诲拰銆?
+- 浠庢暟瀛?2 寮€濮嬶紝鍔犱笂 3锛岀浉褰撲簬鍦?2 鐨勫熀纭€涓婂鍔?3 涓崟浣嶃€?
+- 閫愭璁＄畻锛? 鍔?1 绛変簬 3锛屽啀鍔?1 绛変簬 4锛屽啀鍔?..
+    role: assistant
+    reasoning_content: 鎴戜滑琚棶鍒帮細"2+3绛変簬澶氬皯锛熻浠旂粏鎬濊€?銆傝繖鏄竴涓畝鍗曠殑闂銆傜瓟妗堟槸5銆備絾鐢ㄦ埛璇?璇蜂粩缁嗘€濊€?锛屽彲鑳芥剰鍛崇潃浠栦滑鎯宠鎴戜滑灞曠ず鎺ㄧ悊杩囩▼锛屾垨鑰呭彲鑳芥湁涓€涓櫡闃憋紵涓嶏紝2+3鏄剧劧鏄?銆傚彲鑳芥槸娴嬭瘯鎴戜滑鏄惁浠旂粏閬靛惊...
+  finish_reason: stop
+  usage: CompletionUsage(completion_tokens=234, prompt_tokens=13, total_tokens=247, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=141, rejected_prediction_tokens=None), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cached_tokens=0), prompt_cache_hit_tokens=0, prompt_cache_miss_tokens=13)
+
+============================================================
+ 娴嬭瘯瀹屾垚
+============================================================
+
+鎵€鏈夋祴璇曞凡瀹屾垚锛岃鏌ョ湅涓婇潰鐨勮緭鍑虹粨鏋?
